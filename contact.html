@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Contact Us | Complisure</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:#f6f7fb;
+  color:#111;
+}
+
+/* ================= NAVBAR ================= */
+
+/* =========================
+   GLASS BLUR STICKY NAVBAR
+========================= */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  width:100%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:14px 40px;
+
+  /* GLASS MAGIC */
+  background:rgba(255,255,255,0.55);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(255,255,255,0.3);
+
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+}
+
+
+.logo{
+  font-weight:600;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#111;
+}
+
+.cta{
+  background:#ef4444;
+  color:white;
+  border:none;
+  padding:8px 18px;
+  border-radius:8px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  text-align:center;
+  padding:150px 20px 50px;
+}
+
+.hero h1{
+  font-size:40px;
+}
+
+/* ================= CONTACT LAYOUT ================= */
+
+.contact-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:40px;
+
+  max-width:1100px;
+  margin:auto;
+  padding:40px;
+}
+
+/* LEFT INFO */
+
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.info-card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.05);
+}
+
+/* FORM CARD */
+
+.form-card{
+  background:white;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:16px;
+}
+
+.form-group label{
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea{
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  outline:none;
+}
+
+.form-group textarea{
+  resize:none;
+  height:120px;
+}
+
+/* BUTTON */
+
+.submit-btn{
+  width:100%;
+  margin-top:10px;
+
+  padding:10px;
+  border:none;
+  border-radius:8px;
+
+  color:white;
+  font-weight:600;
+
+  cursor:pointer;
+
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+.submit-btn:hover{
+  opacity:0.9;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+  .contact-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .nav-links{
+    display:none;
+  }
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:#777;
+}
+
+/* =========================
+   WHATSAPP FLOAT BUTTON
+========================= */
+
+.form-card{
+  position:relative; /* required */
+}
+
+.whatsapp-float{
+  position:absolute;
+  top:-18px;
+  right:-18px;
+
+  width:48px;
+  height:48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:22px;
+
+  background:linear-gradient(135deg,#25d366,#16a34a);
+  color:white;
+
+  border-radius:50%;
+
+  text-decoration:none;
+
+  box-shadow:0 8px 20px rgba(37,211,102,0.35);
+
+  transition:0.25s;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.1);
+}
+
+
+</style>
+</head>
+
+
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Complisure</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <button class="cta">Book Now</button>
+</nav>
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Contact Us</h1>
+  <p>Let’s discuss your compliance & facility requirements</p>
+</section>
+
+
+
+<!-- CONTACT CONTENT -->
+<div class="contact-wrapper">
+
+  <!-- LEFT INFO -->
+  <div class="contact-info">
+
+    <div class="info-card">📍 Maharashtra, India</div>
+
+    <div class="info-card">📞 +91 98765 43210</div>
+
+    <div class="info-card">✉️ support@Complisure.com</div>
+
+    <div class="info-card">🕒 Mon – Sat | 9 AM – 7 PM</div>
+
+  </div>
+
+
+
+  <!-- FORM -->
+  <div class="form-card">
+
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="22">
+
+</a>
+
+
+    <form>
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name">
+      </div>
+
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" placeholder="Enter company name">
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter email">
+      </div>
+
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" placeholder="Enter phone number">
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us your requirements..."></textarea>
+      </div>
+
+      <button class="submit-btn">Send Enquiry</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+
+<footer>
+© 2026 Complisure Services
+</footer>
+
+</body>
+</html>
