@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Complisure | Compliance & Facility Management</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =========================
+   GLOBAL RESET
+========================= */
+
+/* =========================
+   MOVE TO TOP BUTTON
+========================= */
+
+#topBtn{
+  position:fixed;
+
+  bottom:28px;
+  right:28px;
+
+  width:46px;
+  height:46px;
+
+  border:none;
+  border-radius:50%;
+
+  font-size:18px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  color:white;
+
+  background:rgba(255,255,255,0.7);
+backdrop-filter:blur(12px);
+color:#111;
+
+
+  box-shadow:0 8px 20px rgba(34,197,94,0.35);
+
+  display:none;
+
+  transition:0.25s;
+
+  z-index:1500;
+}
+
+#topBtn:hover{
+  transform:translateY(-4px) scale(1.05);
+}
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+
+body{
+  background:#f6f7fb;
+  color:#111;
+  scroll-behavior:smooth;
+}
+
+section{
+  padding:90px 8%;
+}
+
+h1,h2,h3,h4{
+  font-weight:600;
+}
+
+p{
+  color:#555;
+  line-height:1.6;
+}
+
+
+
+
+/* =========================
+   APPLE GLASS NAVBAR
+========================= */
+
+.navbar{
+  position:fixed;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:92%;
+  max-width:1300px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:14px 30px;
+
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(14px);
+
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+
+  z-index:1000;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:600;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#111;
+  font-weight:500;
+  transition:0.2s;
+}
+
+.nav-links a:hover{
+  opacity:0.6;
+}
+
+.cta{
+  background:#ef4444;
+  color:white;
+  border:none;
+  padding:8px 18px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:500;
+  transition:0.25s;
+}
+
+.cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(239,68,68,0.35);
+}
+
+
+
+/* =========================
+   HERO
+========================= */
+/* =========================
+   HERO WITH BACKGROUND IMAGE
+========================= */
+
+/* =========================
+   ROUNDED HERO CARD STYLE
+========================= */
+
+.hero{
+  position:relative;
+
+  margin:110px auto 60px; /* below navbar */
+
+  width:92%;
+  max-width:1300px;
+
+  height:420px; /* smaller */
+
+  border-radius:26px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  color:white;
+
+  overflow:hidden;
+
+  /* background image */
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3XPjW7bDRUV0YCrhyCoUyIp9i06NgX7T9Mg&s");
+
+  background-size:cover;
+  background-position:center;
+
+  box-shadow:0 25px 60px rgba(0,0,0,0.18);
+}
+
+/* text styling */
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.hero p{
+  color:#f1f5f9;
+  max-width:700px;
+}
+
+
+.hero button{
+  margin-top:28px;
+  padding:12px 26px;
+  background:#ef4444;
+  border:none;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+
+
+/* =========================
+   FEATURES (WHAT WE DO)
+========================= */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.feature{
+  background:white;
+  padding:30px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 6px 18px rgba(0,0,0,0.05);
+}
+
+.feature h3{
+  margin-bottom:10px;
+}
+
+
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
+
+/* ===== CLEAN WHITE CARDS ===== */
+
+.card{
+  background:#ffffff;
+  border-radius:16px;
+  overflow:hidden;
+
+  box-shadow:0 8px 22px rgba(0,0,0,0.06);
+  transition:0.25s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 32px rgba(0,0,0,0.10);
+}
+
+.card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  display:block;
+}
+
+.card-body{
+  padding:14px;
+}
+
+.card-body h4{
+  font-size:15px;
+  margin-bottom:6px;
+}
+
+.card-body p{
+  font-size:13px;
+  color:#666;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+  display:none;
+
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.45);
+
+  backdrop-filter:blur(6px);
+
+  align-items:center;
+  justify-content:center;
+
+  z-index:2000;
+}
+
+.modal-content{
+  background:white;
+  width:90%;
+  max-width:420px;
+
+  padding:28px;
+
+  border-radius:16px;
+
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+
+  animation:pop 0.25s ease;
+}
+
+@keyframes pop{
+  from{ transform:scale(0.9); opacity:0; }
+  to{ transform:scale(1); opacity:1; }
+}
+
+.close-modal{
+  float:right;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  margin-top:14px;
+}
+
+.form-group input,
+.form-group select{
+  padding:9px;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+.confirm-btn{
+  margin-top:18px;
+  width:100%;
+  padding:10px;
+
+  border:none;
+  border-radius:8px;
+
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:80px;
+  text-align:center;
+}
+
+.stats h2{
+  color:#ef4444;
+  font-size:28px;
+}
+
+
+
+/* =========================
+   CTA STRIP
+========================= */
+
+.cta-strip{
+  background:#111;
+  color:white;
+  text-align:center;
+
+  padding:60px;
+  border-radius:18px;
+}
+
+.cta-strip button{
+  margin-top:18px;
+  padding:10px 24px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.founders-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+
+.founder-card{
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  text-align:center;
+  transition:0.25s;
+}
+
+.founder-card:hover{
+  transform:translateY(-6px);
+}
+
+.founder-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .founders-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:600px){
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:#f6f7fb;
+  color:#111;
+}
+
+section{
+  padding:90px 8%;
+}
+
+/* ===== GLASS NAVBAR ===== */
+
+.navbar{
+  position:fixed;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:1300px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:14px 30px;
+
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(14px);
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+
+  z-index:1000;
+}
+
+.logo{
+  font-weight:600;
+  font-size:20px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#111;
+}
+
+.cta{
+  background:#ef4444;
+  color:white;
+  border:none;
+  padding:8px 18px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+  text-align:center;
+  padding-top:160px;
+}
+
+.hero h1{
+  font-size:46px;
+  margin-bottom:18px;
+}
+
+.hero p{
+  color:#555;
+  max-width:800px;
+  margin:auto;
+  line-height:1.6;
+}
+
+.hero button{
+  margin-top:30px;
+  padding:12px 26px;
+  background:#ef4444;
+  color:white;
+  border:none;
+  border-radius:10px;
+}
+
+/* ===== WHAT WE DO ===== */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  text-align:center;
+}
+
+.feature{
+  background:white;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+
+.feature h3{
+  margin-bottom:10px;
+}
+
+/* ===== SERVICES GRID ===== */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+
+
+/* ===== CTA STRIP ===== */
+
+.cta-strip{
+  background:#111;
+  color:white;
+  text-align:center;
+  border-radius:18px;
+  padding:50px;
+}
+
+.cta-strip button{
+  margin-top:15px;
+  padding:10px 24px;
+  border:none;
+  border-radius:8px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:1000px){
+  .grid{ grid-template-columns:repeat(2,1fr); }
+  .features{ grid-template-columns:1fr; }
+}
+
+@media(max-width:600px){
+  .grid{ grid-template-columns:1fr; }
+  .nav-links{ display:none; }
+}
+/* =========================
+   BOOK NOW BUTTON
+========================= */
+
+.book-btn{
+  margin-top:10px;
+  width:100%;
+
+  padding:9px 0;
+
+  border:none;
+  border-radius:8px;
+
+  color:white;
+  font-size:13px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  /* gradient green */
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+
+  transition:0.25s;
+}
+
+.book-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(34,197,94,0.35);
+}
+
+.book-btn:active{
+  transform:scale(0.98);
+}
+
+/* =========================
+   TRUST / WHY US SECTION
+========================= */
+
+.trust{
+  text-align:center;
+  padding:90px 8%;
+}
+
+.trust-title{
+  margin-bottom:40px;
+  font-size:30px;
+}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:18px;
+}
+
+.trust-card{
+  background:white;
+
+  padding:18px 16px;
+
+  border-radius:12px;
+
+  font-size:14px;
+  font-weight:500;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  box-shadow:0 6px 18px rgba(0,0,0,0.05);
+
+  transition:0.25s;
+}
+
+.trust-card:hover{
+  transform:translateY(-4px);
+}
+
+
+.trust-card:hover{
+  transform:translateY(-4px);
+}
+
+/* responsive */
+@media(max-width:1000px){
+  .trust-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .trust-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* =========================
+   CATEGORY BADGE (CUTOUT)
+========================= */
+
+.card{
+  position:relative;
+  overflow:visible; /* IMPORTANT */
+}
+
+/* badge shape */
+
+.cat-badge{
+  position:absolute;
+
+  top:-12px;
+  right:-12px;
+
+  padding:6px 14px;
+
+  font-size:11px;
+  font-weight:600;
+
+  border-radius:20px;
+
+  color:white;
+
+  box-shadow:0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* ===== DIFFERENT GREEN SHADES ===== */
+
+.card[data-category="cleaning"] .cat-badge{
+  background:#22c55e;
+}
+
+.card[data-category="maintenance"] .cat-badge{
+  background:#16a34a;
+}
+
+.card[data-category="compliance"] .cat-badge{
+  background:#15803d;
+}
+
+.card[data-category="facility"] .cat-badge{
+  background:#4ade80;
+}
+
+/* =========================
+   FILTER BAR
+========================= */
+
+.filter-bar{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:40px;
+  flex-wrap:wrap;
+}
+
+.filter-btn{
+  padding:8px 16px;
+  border-radius:20px;
+  border:1px solid #ddd;
+  background:white;
+  cursor:pointer;
+  font-size:13px;
+  transition:0.25s;
+}
+
+.filter-btn:hover{
+  background:#f1f5f9;
+}
+
+.filter-btn.active{
+  background:#111;
+  color:white;
+}
+
+/* =========================
+   SUCCESS MODAL
+========================= */
+
+.success-modal{
+  display:none;
+
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(6px);
+
+  align-items:center;
+  justify-content:center;
+
+  z-index:3000;
+}
+
+.success-box{
+  background:white;
+  text-align:center;
+
+  padding:35px 30px;
+
+  border-radius:18px;
+
+  width:90%;
+  max-width:350px;
+
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+
+  animation:pop 0.25s ease;
+}
+
+.success-icon{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.success-box button{
+  margin-top:18px;
+
+  padding:9px 18px;
+
+  border:none;
+  border-radius:8px;
+
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+
+  color:white;
+  cursor:pointer;
+}
+
+
+</style>
+</head>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const modal = document.getElementById("bookingModal");
+  const title = document.getElementById("modalTitle");
+  const desc = document.getElementById("modalDesc");
+  const closeBtn = document.querySelector(".close-modal");
+
+  // open modal
+  document.querySelectorAll(".book-btn").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+
+      title.textContent = btn.dataset.title;
+      desc.textContent = btn.dataset.desc;
+
+      modal.style.display = "flex";
+    });
+  });
+
+  // close button
+  if(closeBtn){
+    closeBtn.onclick = () => modal.style.display = "none";
+  }
+
+  // click outside
+  window.onclick = (e)=>{
+    if(e.target === modal){
+      modal.style.display = "none";
+    }
+  };
+
+});
+
+</script>
+
+
+<!-- BOOKING MODAL -->
+<div class="modal" id="bookingModal">
+
+  <div class="modal-content">
+
+    <span class="close-modal">&times;</span>
+
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+
+    <div class="form-group">
+      <label>Select Date</label>
+      <input type="date">
+    </div>
+
+    <div class="form-group">
+      <label>Select Time</label>
+      <select>
+        <option>09:00 AM</option>
+        <option>11:00 AM</option>
+        <option>01:00 PM</option>
+        <option>03:00 PM</option>
+        <option>05:00 PM</option>
+      </select>
+    </div>
+
+    <button class="confirm-btn">Confirm Booking</button>
+
+  </div>
+</div>
+
+<button id="topBtn">↑</button>
+
+<!-- SUCCESS MODAL -->
+<div class="success-modal" id="successModal">
+
+  <div class="success-box">
+
+    <div class="success-icon">✅</div>
+
+    <h3>Booking Confirmed!</h3>
+    <p>Your request has been received.<br>Our team will contact you shortly.</p>
+
+    <button id="closeSuccess">Close</button>
+
+  </div>
+
+</div>
+
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Complisure</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="cta">Book Now</button>
+</nav>
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Beyond Advice. Into Execution.</h1>
+  <p style="color: white;">
+    Integrated compliance, facility and operations management for businesses.
+    We handle registrations, regulations, maintenance and on-ground execution
+    so you can focus completely on growth.
+  </p>
+  <button>Get Started</button>
+</section>
+
+
+
+<!-- WHAT WE DO -->
+<section>
+
+<h2 style="text-align:center;margin-bottom:40px;">What We Do</h2>
+
+<div class="features">
+  <div class="feature">
+    <h3>Compliance Execution</h3>
+    <p>GST, Udyam, labour laws, EPF/ESI, tax filings and regulatory obligations handled end-to-end.</p>
+  </div>
+
+  <div class="feature">
+    <h3>Facility Management</h3>
+    <p>Cleaning, maintenance, security and operations support for offices and industrial units.</p>
+  </div>
+
+  <div class="feature">
+    <h3>On-Ground Workforce</h3>
+    <p>Trained professionals deployed at your site ensuring smooth and reliable daily execution.</p>
+    <button class="book-btn">Book Now</button>
+
+  </div>
+</div>
+
+</section>
+
+
+
+<!-- SERVICES -->
+<section>
+
+<h2 style="text-align:center;margin-bottom:40px;">Our Services</h2>
+
+<div class="filter-bar">
+
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="cleaning">Cleaning</button>
+  <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+  <button class="filter-btn" data-filter="compliance">Compliance</button>
+  <button class="filter-btn" data-filter="facility">Facility</button>
+
+</div>
+
+
+<div class="grid">
+
+<!-- 1 -->
+<div class="card" data-category="maintenance">
+  <span class="cat-badge">Maintenance</span>
+  <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80">
+  <div class="card-body">
+    <h4>HVAC Servicing</h4>
+    <p>Air conditioning and ventilation maintenance ensuring better airflow.</p>
+    <button class="book-btn" data-title="HVAC Servicing" data-desc="Air conditioning and ventilation maintenance ensuring better airflow.">Book Now</button>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="card" data-category="cleaning">
+  <span class="cat-badge">Cleaning</span>
+  <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80">
+  <div class="card-body">
+    <h4>Office Cleaning</h4>
+    <p>Daily sanitation of desks, cabins and shared spaces for hygiene.</p>
+    <button class="book-btn" data-title="Office Cleaning" data-desc="Daily sanitation of desks, cabins and shared spaces for hygiene.">Book Now</button>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="card" data-category="facility">
+  <span class="cat-badge">Facility</span>
+  <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80">
+  <div class="card-body">
+    <h4>Security Staff</h4>
+    <p>Professional guards ensuring safety and controlled access.</p>
+    <button class="book-btn" data-title="Security Staff" data-desc="Professional guards ensuring safety and controlled access.">Book Now</button>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="card" data-category="compliance">
+  <span class="cat-badge">Compliance</span>
+  <img src="https://d6xcmfyh68wv8.cloudfront.net/learn-content/uploads/2019/11/Funding-article-cover-2-770x515.png">
+  <div class="card-body">
+    <h4>GST Compliance</h4>
+    <p>Registration, filing and return management for businesses.</p>
+    <button class="book-btn" data-title="GST Compliance" data-desc="Registration, filing and return management for businesses.">Book Now</button>
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="card" data-category="cleaning">
+  <span class="cat-badge">Cleaning</span>
+  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXGB4aGRcYGBkaGhcZGBobHRsYGxcbHSggGiAlHRgXITEiJSkrLi4uGB8zODMuNygtLisBCgoKDg0OFxAQGi0dHR0tLS0tLS0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tK//AABEIAKwBJQMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAADBAIFAAEGB//EAEcQAAECBAQDBQUEBwYGAgMAAAECEQADITEEEkFRImFxBTKBkaEGE0Kx8FJiwdEUI3KCkuHxFTNDosLiByRTc7LSFqM0Y4P/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAID/8QAJBEBAQACAgICAwADAQAAAAAAAAECERIhA1ETQSIxYRRx4QT/2gAMAwEAAhEDEQA/APSgYIIDJmBQcEEHUQUR1rmIBG2jEmJARkhqEDtDJTEFJiTcuZBkTCLQplggXDKFjJxW8L4rstExWZK1oVqQp3GzKcAdGgIXG0zzFqHaaewkm81Z8Ef+sSHYEv7Uw/vN/wCIEN9nzXB6w3HOtaitHYkrXOes2Yf9US/sWR/0knq5+cWEZEdER2Ph/wDoy/4B+UGRgZQtLQOiR+UMRpQiSIlDYeUSAiLc43TeJJRqNUjHiTcBxWkFJ5QDEOSKWeC/pPO+3j/zc7qP/BMd72D/APjSf+2n5R5728f+Znftf6RHadn41SJMoZ5CQJae8uthpGcJ3VbpekxkUh7ZQL4mQOlf9UCX7QSRfFD91D/gY6aG3QxoxzC/abDj/Fmq6JI/AQA+1UgWROV1IHzVBue062NGYNx5xxcz2sl6SCf2lD+cKr9q1fDIQOqif9MXLH2u3dHEo+0POBnEp0Mefzfa2domUnwJ/GEJ/tfiP+rLHRKfxJg5QvRcTMzLcAsEgeLl/wAI4L/iDPT72WCbIte5/pHPY/2zxGmJLuBQJHyEF9q8d72dm+6kegf1i1Kji/bJgEplCgAryhGZ7XTjZKRFDMVCy8QBGt0aWuK9p8QD3gPCMjmcVjQTf1jIE9hw0qZLLpcctD1EXWExgVQ8Ktt+m8eULnLsVqP7xP41/nGkqqCCXFi9QdwY6cmdPZEGCpjh+wfay0vEGvwzLA8l7H71t9z1accBoYksAI0RCR7Q5RicfWog6RsxHLAVY0aCFlYtWgg3Ef8AdxLLFd+kLMTlrOpg5RLfs5YAUSQA9HO0EmdpSxefKHiPzjyPtHtYmfMUQO9TiSRlAZLEEvwt6wA+0AFGT/EIzbfTT1tXbkgXxCT0D/IGAL9psMP8RZ6IV+UeU/8AyNJ1SPMwKb7RGmUFX7KFGDeReqn2rkaJmnwb5qgava2XpKUepA/OPLT2xiFdzDzTzy/hB0nGqthlnmSE+jw/kOnoqva86SR4r/2wvN9r5uiJY/iP4iOPkSMYogfoyQbB5oqTuGjsezvZWWgBU5lrNSkFXuwbsHqrqaHaGY5X7Fy0Tme12IJYKQDyTX1JjX9t4xVXmt92V/sjqsJKQiiAE0FBRr/XhyjXvlOoKKad1i6iOY0jU8d9s83HT+08T8asQOqVj8BFBO9ommy3mrPGmhUrcXBMenFa82WuUgcSSA2UuQahQe1H8NVe05EpY40IUHZyBdR6ULnxi+Lf2uf8cZ2tiEqnzVOKrOvhHLq7blhZpqf6x2PaHsjImjOAbsZeY8jmTWoZQe9/KOH9mZSRlCGI7pNX3FfWMTxd2Vvn104+X7Rg2QddDpqKRn9vrPdQemUx2auxUkOEtuGqCNYw9kg8SRWOnxRj5K4X+35pd0KB2yxFfaOJVZKx5B/SO9PZSTUCvQecaT2ekVcN5Q/FFzrhyvFmwbqp/wAIWm9nYxdc45cRj0QYSWLteN/okoCgHrGvig5vNVdiYlZ4lGm1oN/8ZmEAKJ8vyj0FeGBsk+AvEThhbi6NXrGvii51wyfZVJuR6vSGMX2dNIpMNPuh47ESKUB9Lct4hNwhJoB1eH4oOdecz+zZuqln0pCquy06ufE3/Ax303DO4LA6HQ+MIzezgS7MRezEHQ7xi+JqZuMV2GjQecZHUmSbZAG6n11jIzwrXKKKRO92RLJ4DSUonuE/4SifhPwE2JymjEHVi2NS2jGjHaEj2S4NyCKvaqSfyif6Mc+SbdymXMLHOzhMuYft0ACviDA1Z8bIyu0EfaHnHRezPtgmWRKnKeX8Ky/6vkT9n5dLVKOwKLLWVSrfb/JvCLNPYaUlRyg3p098z/wjyhmNotj0hCQQ41iXu4oOxsQuUVS2JlioBukcZLcnQaR0UqalVjah5EFvmDGcsLizLKH7uMyQZoguMFACK7tvEqyplS055k05UpsFWzBSvhDGurZoZxE8JBKiAkBySQABuSaCEMR7XyEITkKF6hYClBO6ypIOUbqDkAvasU/Z0hK9lMKK+6T0AGUckvoNOUOyvZ/D2RKQfBMaxHafvJYVhJcozVBwha2QpP25S0ulYqKA66GkL4CRj1LQqdPlJSCc0mXKuz8JWuoq3pvHeYys22HpfZMrRCXfa3pDSOzEDQeAhuVL2IBPIfW3nE3FPr5eHnyi4xbLpwyRYekYECzD016QRcxjp9W8xB5ZSbfL6+jDpbUfa/aqsMklMtJUUFQL1BSQGD019IpcL7by1JyTVJWBqkqQrkQDUV5vE+18erFzxIwxQEpMyUvETBmRmKCVypaHAmKCRUk5UvyjjfaH2LmgpMpXvGFu6txegceAMakZrusN7ZYawxSd2mpOYPzSRTwgivauQ5UJ2Fdmf3igSBof1btU0ePGcR2bjBeXMIOispLU+EkkXFxCi8FiHY4Yj/8Aj/KHlPS4va5ntthkBjiZI5ITMmc7unnFXi/bSUay88w6KmMlI04Uig6s7Eh480/RMYpCQmUUsacCJbc3LGH+zvY+etQM2YhANbmYryt/mguamLqezu21YjFyQFFRzgcNEpTqANaVN6O5j0kAkDMz/j+Ec77D9gyJKFrSkqXmKfeKqpmBYNRIrpyd460NtASfuqvR/CAy5HEefl8osiobB/CNGu0OwrlYKr5r7flA1YJAc5Qo8y7RZBgT+UYvwh2iKZYZ0hLeDwJeE4iRQKvt/LrDWJJAdN9t40nEAihD/X19VkSmYQMzmmjwNOBpmBen0/yhzNmcVB0HTUHaBLVffXQH8jDuoqMMNRbQadNxyjZkh3VY6j8R0ic4PemuxB/C0KrmGwYuHb7Q/At4eUO1prEYYa1G4uOcIzJDCocaEG3Q+UPpUR3Q4HwnTxgsyXtY3DereHjDtaUisK9q8/5aRkWowwOo8Kfm8ZBs6cZJRzSzAeQA/D1gkzCpWFJUAoLBcZXcF6O1Lmo5bRYypR+yR9WFtvlDITQuNDdvzrpHOYrbn8BNXLWMPOdSVt7mYo1WEg/q1n7aQSx+IcwY6aVJJevma1f8VK8zCnanZaJ8syykh7KBUFIUKhSSQwINRAPZ3FzF55M0AT5TBdAcwI4ZqRmHCoeRcRuTQq6EtquOurefXXWG8NyU3QQvJzgvmHk3h8UNhKnqRzIP+wRpk9KnGj1pe0bmTk7wit2ZyeYvvc/PrGyjXi8SPqojjfFK1twX/E/2iXKMqTKCSV8ZJYtlIZwaAVe3RmjgsF29OlzCsrzpOX3iG76QwOULcZgNSytd47/2+9kzOX+kocgIyLQl1LoSUrSAKtmII2AO8eeYPsVa1sEzZmU1CJaqm7O5Z2Plyg46bldp2R2glKc+FUfdKL+6m0S4vUFpax9tJG+bSO37C9rEzCETHKh8C2EwfsLoJyaWLKp8RjhfZuYiXITLKQUqLlqlMxV0lyxJHdNHqARrZYrs6VMRmQoAD4VGg5IWaoP3VNyK4z/ovS8MsKTmSQpLkEihGmVQNUEUobNBQaniYW5208leIEeadme0C8OpIVMKhYKKgJgA0JPfTtnDc0R3XZntKkpdk85iEvld295LHEgPUEZknR7xvd+2NQ/OmFCCspXkCSSWsEg0bzbqI869o/btYTNluqUFLUgKTkJTLSSCxBJzqYsdy4cW9FXO98kgrzoWLApIKSKpdN3BV5AxxXsn7MYeZJk4mYnOu6UqSgpQpCiAEunOA4FCotmDUDRrtlZds4ZMuRg5MmWESwZicn2R+iTzU3JzXOpeONkYhZmgFalClCon4tnj0ztqamZJWZiSFy0lSF2+Ehj+6pVDzs0eWILTyOY+cMVW3bK+MNZvr5RWzpmdR3d/r1hztoEHwH+qKbDrrzv5RnIxYy5hEW2CnBk7gkV8x84p5vww9gprA78+oEYrUd37Kke6X/3D/wCKYuAdfw/CKb2ScyFNX9YaU+yneLTMp7U5kRuMiFYiAXsPH+kZxHUevnGlAi6jCkpqizj5NC4mjn4kRJbWKrc7/X4wIoTZLgvW/wCUISUl7CnWE8Thi7pAB1rcbHnzhsJ5npvzraNK1cB+f9Ikr0Yhrl8twb9Qbn8RB5qnqA/LWu31+EQxcrNVwCKPUs+hG0LYWUtgQUgWIL0I6j69ISZKgbef9Pr0cE2Vs34ilwdD9ddzUgHvJB+INRXr6840ovTMfIUI1Jf68mkHNULkkbLs2wO3y5xnv8rhQbnpt5fn1MEKHuHcCpZiNvS3OJ+5oHFB9XN2iagSzzby+v6xkGXKGuUdf6xkBUSN+F/IGlDU+MSDsXZXLQ6tQBomhKjXMdtOZ+z9VjakMO8Qf2jvsLaecbckJeYmiRub0O/0Nop/aXDrQU4yXWZJBzgM65NCtN7jvDYpN3i7lNwu5ruqvP8ApDM5QsQoglmUQBXqz9IbBtDCK95LC0zCUqAUGIAUCAQQw2MNS1kXJ6Ak28I5r2KUBhzKJcSZs2WHJ7qJigmj1YMNqR1EpAd8rbAJ/wBsG+jRM9rdSDc8zbWCBSSC2vTzpGBgPhtyDDzBblGxMzVBfx/kYEj7s/Rbz2jaCKNxEObvYpUz+BH70RTKrdT6DKw8yALxJXCQpTsmrEoNBsBU2OkCcR7Y9g+7K8RIS6C4nS+T1WPQkixY2due/S15c0tQKkh63UkXtZQ1Gt+ceq5OEh324VKYNlOlaEHwOxjzz2m7LGEmCbLBElbKIYj3a9QHHIkDZxpHLLHXcdMcvqiYBciagzElKSSygWCgrYkgqV1t0sK+bO9woqlL92tLnI4ynUsBZw9UsCe8DAFez02etKpWHzS199woJoXcECoILgi1jz6Psv2KCFA+6lJPNCifmI747yn6cctY39idie1mUS5mIlmUF92cEn3ay9lEMAX0LbgNSLDDYbEiUv8AR8UhKJaFqlS8iVCaACtRmE1LkkcGVhlcB4vu2JKf0VUpgQQzEOCNmNI4Ts3tAYWfORh8NnADKCpwQlImI7ssKBJUeJkigbR2jOWHGbOOe7p2kvGLxOD94Jah77D5wA5rMQ+V6DvMfEx57hMqsQQSE0JLlspAsXsx3jvOycfK/s+TNlVAli54mRmQQUBwGKQHBrpHJe1/bMyaf+XmZpspReUrIHQpKcipamFMpdySxUoWyiHU1uKW70F2p2hLUvhOYgXAJAvrY6WcUirlps28UmH7SlpUozD7tSjVJCnSQXe1nJryPJ7TB9p4fMk+9QwqeL0byjla6aXU/BrCM5HDc7gGz+cM4FJYNoa635efnAJXtJICVZ5gI1YKVR9coOm8VqfadDKGHQqZ99QyIFCzk9Q4JTyjNa09R9jsT+rKQRnKioJcBRSAASEvYekXsyujK6kP4R5X7Kdv+6JBmlcwhU2cr4JSJaFBKRQXUUAJbUvUtHpeD7VC0JUbKALHR46SdMb7b96XAUmvMn68fGMGY7N0rWx/lyMM+/Spg97Hn9flrCs05DUMNeXPoW9NxEkULXQnoRQePr+NniE1Si/Pmxc0p+W9LgPM3cU336jR69KvYmNEfTU2t4M3IC+UxIFJNCVXu++j7deujiMIJ5KB9QR86emrPCfTiBfcfaF7708W3BBBIYgEF9Ao3/ZVoaa28DRA5Lhww0r0sR08m27q81CTYcQNRrXTxPnTW5HJsAFPYvU7Pu4obvzYnSUuz0LaiovQgXetOrC6RFqVMCgcqAK1B/kLUiS5pFMyRycwDPdqLAPlStbg7nx0VEUTUktlIV6HnmofC4hQucWzZtgNvMwKaoAlwH6EnyZzaCFaaih5O7+DmILmMGBy9G0N2iIX6QvS3in5qjI0oqckqd92HzUIyJK+TOCg4ALAmuc0SMxqzE7eNdjyl0PDZ/hB7uUMxtRQuReFUPk3b3lwdZaAwCnIqfp4IiktW/HXrMlijRpgzLnqLoylwpiHSB3gl6JOp+fSF5uKShJUtQSlIzKVmcZQCSQQE0ptG0zwPeFwaZnax98Dt46s8UM0/pykJA/5VPeWqgxBzqZKd5YIGZXxZWFHMQ0f9i5K04ULWGVNUucUubzc8xIIfZgekdBXMprByKDTKXzM9Uki8A7OWWYg1UkEAfaStJp+BtGpc10nhsRrUZklyABukRSfSvszlYrTnW6bcRFlgUahoR6wz7kOOG/CS9bKQ79RvrCc+eHJ+0ku25lggeY9OUHViAXLO7kV0cLD+SxBUKUApcUcOWJqVICg/wC8hXnEpcyoUHDKUWGwOcU0otXlEZayACDbcv3TmqdaLV5QKUopqwykgUeyXBf9wiutdGgR9chnqT0ceo84472w9oMi/wBHkIC5ly9Qhqgl6BmfTemvSrXcfZ4S4BzNQGppa0eYGYTOxKj3/flB6JKmHjlH8IiOxnxSzmVi1An7KQ3mSknyhiR29isN/eL95LsVJAC0PRylm9D10iCMSlIS6MylBySHc6pto9uUTmBJVl+AnKRsFJ4h0F+Tco0zte9qe0uHyge/QHAOVSg9RSPNPaDGKTiZk2RORkmhIORTuyUpILdH8Yp+1ipS0sCQJYBLFrqN9L+sJAgFIJAepcGgYcta2jGfkuU03h45Lt6f7Pe1UmVhJUhc+WMoLjKsqDzFKAoOY9RqYou3p2Dnq/VTVZh3ShEx0vZI4bO7ah2BEc3hOzQssHO6lUHgkV9fxbocN2cJbKNSA+jMzGgpaj3PODnbNaXCS725ntQTkKKFrUpqMoZT4pNN6gnrCyZhAbKnd8nF5gWi97UOcnTw8IqDJV5chHN1gYmKoyUuNco+ah8oclImTGzLUQNnV1ANhEEEjZt2HzZ4suz1kKBNW39Ik6H2e7HJABGSU4Kg7qW1sx1A2FB4x2sztRhlSaD0jkZWNUqxaHsODRVq3No74ajjl26T+0yEKJLMkl9mDv8AKOr7LxYnynUAFAlJOhymx9PGseVYntVLPdA/+0j4Rul+8bXGpbtP+H/aBOHSVHiWtSuuZRHqQWPMA3iy7/SnS/mqKS1mNel6HT+Z0MLTUOCQwJG1NqXoaBuTaCLLGSSsBaRxC1mI2rofO42isQQoZgDmZiD6g6kgeJA3TGYqEMxS7E1fvXJ1G9vMOKuI2JWpI518XoDpVxSrijxipwDEHgNLtlPMi7s7jYKGsTRNdtvAMxudq3axL91RhQbOGqC1rUFC4tejs1B1iIOZQcqStst77guBW1KVFwamRQHeiSAQCw6MQbAEgM9Ld000t1AsGUOlPhY3A2c27p0MRCmIYuqoCqFyCh3uzEgl9N6OFJgE/DpDEEhu6p+6WoCqrBjQhw24sxLmEhlhlORZntvrYVu1SCAqAlBGnAQzBy2nUh+hfZQLyblTyVZVFl2beugA2DtBBMGihQaHkfhF4QxCUkAB2DMXNACXYhnZn9Q1UwSTiSXSp61BFiPPmOsJHyjo+4/9oyAy1Pr4HLTlekZCtuXxPtVhzmCZwUSpdJaVzKKyN3QRoYmvtmaoEScMvKc/FOWmWGzJrlDzHBSKZdIEjsSSEoAlJSCnYN/ekOzULD5dIdxeFlpD5BTOaMG/WlzZxR/zi1R0Anslc3MrEzM4cfqkAplDjSOKuabQ2UW+7SLvKEqyAJ4aMbJHvPsnSpSzaGFZSQJZUR8JpoP1qGF/2fSCYpQC1X766j9qz+B5wyCrCSWKcx1s4sJh0Gl/IxJEvLkc1DCmmVRSaOLD0hPtNVFHLXNMamygxs+p8WjXaMxsxBrnmClrpIr1P0IhpY+6Aso75Wo/vCnwZ/ziWGOZyoUGUVpR8rUvQjlXwhMknMBclZe4smYN9jAsLMcqDlzmGV3BB4wwalUwLS2lzBTQsnexzS1VNbkHSF5CjlUFBmbUjvApIrUMQm+wga8QHUCQ5zEV0IC00beFziHmG3Gkl6UzALT1qBrraJaHnz2c0qAS4JANjYH4kqrHHdvYEiarESkhaV0my0kuSluNDpAcbCrvQuY6NeLLFz8fIUWMwSCzd5KvOK7FYlw4CC9yV0fmySkwUyKGV2xIDgrynULStKgdiEggmAYrHmaMsgFiMpmFJSkJNCEi5JsTdtKvD2IXwuQC1mSSA2xXTw1a0V+IxJZs3gVA7G55tSn555Lit5cnLhjLysgpIGZUwBQrmLVALufENpHnHamGykPUA316fy8ufZ4HtfhKCp6G4STXmobseVTFV2kjNRVRbcEaGiaG/nHScM/xyuv6z+WN3O1fgO0mAGb+IZk0+8OJOtwesW8vtZJDFDjXKsKfwooeUc5iezgzpJTyNejFnGt9oWMpYqRfofnURjLw+TH63P523jnhktsXiEkklRBJ1Ch4kN5QBUyXQhQ5Dpu/j6RWKUoGtORcRozxy87+kcq6SLNORi6k6a+u7Q3gpqRdyX0DmKJGJNgPUn5RIzlmgT5A/iYpu/pV0/8AaLFkgDqXP8KHhfE9uPQkrP3gyB+4l83QuOUUwlTiGKmB0dh4pFDFhgeyX0Kutm6a1jvj4PJe7+M93pyy8uE6nd/guGmLmqzLUSmztUjYAW8I9c7FlKlpRlIUwymhYZWBoKtRvIxwvZWDIXwP7xIzClA18vMUNbuRSO/7KkkMUukM7F+Eh6h7+rppSOlvjk44d+77/wCOcxzt5Z9eo6TB4ljev1elNAfAjWBdoOCVizcQ8d3cX8CxF4hhGVQsk0rRxqzvUVboQ8SmBQsKs1OIEbE6taulDHHXbp9FJ8v4gUsxzA0cAvmAahe72J1CqBlzMqaAFLghQLOKnXVzQGzqFjVWZOmZ+5sQ+VNLUGYuGcOXpQ8pypkzVASHF1Zhf7qa0LVNrvSHQOTVhjUaNTqAz903Z7VSaMY0pVHY0olQHdGyuVWraoO8LJQTTOhuSS7sGLKWQSBy22rolQUc0xZUf2UOLNVBJ8xEW5i0m4qLjMKaMXI0IqWpwq3iAxyPjWkgHSr0tatGB3ZjoQtPlpbMCtwLvmufupynZm1hdeJmAg2B3odr03e4trUw6W0p2XMSlVrADn94h6gsPD70amTcxCbDZQudQK1D6kC+8QQsgtX/AChgRZ9PI+EKySu9QBqZ0xTP9xKQLbt4xGHyuYmmVXm7Us+vW++5yBhEtQBUiUrmU5vLMX2jIiVSqslw9Egi3emqNaVuf5Rk2ZRLNxJO1vffNtYDhhmUjZJkioo5KjTz0eITMxSkBm92R4GYrXfS20aZPib+rUaB0LFeS0mzefP1hjVkzFi/Gu3XcGnm34Yl8lbkLuBulw3QNXfwgQVmlhahdSibOXCSOQNTyDxI/OJIsakjX40JaulifHwgU5ZUDV3yEV1XLrzd2MaKiQCbgyy4Lkkyr+YIjJvwWcpQS4ezp5H4bwIykhkqJOX9WSeWQoVYWcH6eFpCglSXZNUu7vRWVVBaxDUtGS1/qwKUlnYh0TQSPIfTRqdLOVIqCCsW2ZYITWrqOr05xJozmUlQAOUOXIHdXlZyKUy28oVmOlRLDgFKguZasz1sAgA0pSjWh2dMSokZh3lEO9pssKBfYGu1YUWr9YlanCSEguCKFGVR50Lty8IEWmzykkpASRoAKFJKkkNpcQvPlqDsqYQS4skAGoq9R9NEpc4NxKQ/CGzJPdu7FRc/iQ0bVO4SkOSElTioKU1pnSC4BFnFIKVHipTPwu+qiFP4gGnjC03DKJrlI5Bajfcmn8ukWeMlFClVVwm4VlzApChwhFiOfxQdOFBCSMtTlergrAMsgOKFTg005xz41rbnJcgpUCk8Q0GRP+VntuY6rsYCakAHi2O24NvEbwvhcKCACQlyQSw4Qp0h/wBheXVuKopQM6UUrRMDodLltFA5FkixZQzNzFo1MRaaxvYMtRcHKeTKrzAUdNGilxXs+oZiCksHIBCSABcg1b8o7fs7HonpAmICVl6kUK5YdfNzLKVVpTWogmMwPdmhIJIYmhdnYjcKS484tWd43S6vVebTOx1hwQXS72LZWJs+heAns1TlhUVtdqlmJ+FyNxaPQJ+BTmAl1PCz6sCqU52UnNLIPjpCeI7LD5khQIIylgKE8FHqxBQf3Tyh/wAnyzrY+HC/TjZPZSnNnYkNVym48BX+kNYXsbMBxOToN3PC9bgKI5pIi9/RkJWTVIPGggUrTwyqzBqUaLCTISkgsyVEs3wkFzZiVJU5G4YRT/0+X2vhw9KfCdijhypuwBPMuk3+IEjkoXtFj2f2eoDjy5/sOzhThQCjWoGtiBtFs5AUFEZdcp4g540g7g8YrSkLzJoLkJUTRwWy1NTsAeE9SN3jN3ld5XbUkn6hfD4XKQHzOSpKiFBv2iKDMcyVWIKXsK9T2fiEqQ4zA2YpqCKMed6Gsc9jZpXYZnIoSQCcru7NxsKDVIqLQXs7FlBzFRUwDh2JFhMLPWyVPq2rxvGaFddJxBNQC3Ig35ND2HmvQtpd7vFZLUo3TbcD8x125w7LUTQEDxSfzbyhsBbtKUzBwBoVJDPsWpFXLmUZJLj7L3Asx5vyr1joe0JIXLIJbUPQAg02845dUtizMx+yw5nMmu9/PWKJI4hRS+Und2B+Z2iSJxsWFNQ4fxADNd/5QJUgt8X8QVe4ZXEH2F/GAzJOV2IGprkJ6pVQ/VYjo7LJIzJY1JBTZ2A1VW9vSF1rArkLitspsd03uaQMODYDRykvT76BTSvMxgn6KUDTdKrNZ2UA3Ln1lovOmBXdCiHDvnKb/dIJ0jSwVFwhBalAKPqM1vS5iSwgcSx5Zkn/ADBmq97xJpfeIJD6JBDM10E1fUgmFaaYkuVqHLKAXN3ISX/rGQvjMSlwVBVbcakhtKMDrrGRILCzEpIzGpXLNtEpUD8/URFJKgkfdynqFqNvExVJUk1AB/d1Gr1FSDXl1EWCVLbhlrazMlQ13qItjR0KZDG7LAoQBmZrs418NIxCwQAzgKzZgUG4twqfSEisu1Em7GYEmtapeh6xuYFWCku98izfTMA1/wAINpZIxAsogNlLEqBdAYUIGlzGZGZnYBgGJF3uFbl3b5xWoxCQMpnEfw+TLL+HIXjF42TQAqJdqFSQepSDQfn421o+hIJ71XJBcAk7sU+rj5xqapLVUP3qf5nva0KDHaCUpf7TEP1UQdYEMXMZkSkpBu5AOtCCFDeLaMqWKVHIHIsHYbvzgaa1CVcikEDqzMPkYgMXNqxB1NS9dikiwAgMzFks6y5rYa7ZnNC48oCZM9SKgpCXuWSza5kkODTygCMfxJJWVgKcJCgpw7EHYNS+tbtA5ibEpHIkhNPJmfY9YIcPT+7ox0KhyqNPDSII4+WpNHdgZZdroLpUG3Rl0snyFgEkgpLjMkgEiqVJOaURQa5hd69IexK3RmU6uGUp0ljrLNR1D6OYRkghTBqHMLuVSxmb+Etu7CEDykjO5cCb3rU98nnoFpPlpEsUvMHU+iyRQgge6mgF7uEKan4xGRJzOxZObKCMrpCzmQyhpncEc4kmVxIz8SalaS6qqdM2pqC4Bo9QKRJX4ZRSkm2Vilirvyy+XxClhq6R0HZftCy/dznyFsqrEMApGYKDfdcDfeKaclcvMCzJVlJFypHXRQIgcxDqlhsqVsQSS3EQStxUMoevKDRdri0IIISNxVgcpOYFNWJSQeJjQc4rcUCXJoA4YMzKPEwCaWBa96iE+xO0JsnMCykpc5VBy0shMwpJqlrtyNBHQ55K3AoqoANHJqANwpNKXKYzZKY5vFyiWJKlEkuhgwLcYHUMoNaloJ7lsjBQITR67ByGHeHqz6Rc4js/K2VgkF/D4FHoXQf3XiM/DJVZIYhRTWoS/Giv2Scw5PBMTtX4aUkkAKBSQ+Yli3dCgytO6eTFi0TmYTKSQ4CXqAcwAICg1O67uxo3g7KwtQDlKgcwrdwAtDbKQB5NBfdhVXyhhxKo7/3Sy2t0KrG4Av7LTV6lqtQH4uEbqDKTTvJaHcNg0NVKQNsrJzL7q22U5BFWU8RklLOxypoQRUAFyOqDxAs/fhlQFrlipg4qWKgK2UGUNjCE8EjIyCSAzpcF2FCglwAUn0bnFnLy7k+RPmIrygZTqXSp7OaBK+TgFJaxic3tNKUl1BwWId2O2h9H/AQ3aeLCEFOp02G7EU5RyhxLcQQq+iMjq/dX6kRmM7UClF1Fzei2FKDKQQaVpAkTrZUkk7JTqNwUn00jUgbM96AJNdTm5uTlBBfn+EFUtQFyN9EjwUVbtpAJ0wu2gLnMsVOjBdOmkCGIFHKU1FQVEFwSwyk16D+SUhLU+ZPXhAHgDLFb+u0R91mcZi7V4isjwWeTRkye9QSeaEoKuvwq1HpGTApXwra3GogEaEJVmAIpsWJ1sLZWbhcr1CeZTkVevEBterRr3SFHiWFE0J4Vm1hlU7eG8FRhyXYIGgIdRynQ+73rQiIKS1SsV0UkOGD92Yza2s7NESeIRLehU2gSVgeWSh08OQjIeQQ394v+JVefAVCv4RqBKQYicNQmtnV6Mqt4IlC1txPuQElubM+vg0CTJLA5/wCFg7fsBxGe7TmDlZ5F+f21DlGSOuSU3WovXvFAG+oiX6EgirF9601qH+URU6WDEgCrliB0TGkrNWSCTyT50yloQaw4QngACehHyOWDLoC7EdCGY0L1bwhIoWBUlIN3c06FxE5Mo1Lu1Ax+YQ3pAjstdBU3qHQfSh9ImosOLbdQDad4V6QBKaNmLWuRcHRfLbaJSU5QyX6sD5lDuOsKYHKlMbjaty7EDZvSBLXdJNRU1cvsxND0O17HacSU8KnaneZ1V2aNJQu44UigYm45F/yhCJAIs7/CFFNHuSAaV+zrDkpJ+FMvrnUovqSEZTt5wiMtQ5B3oL6in08SyEgcC3f/ABZ2moykW8f5QM4VRPCU5WUZZH3Jxo22VTEPbNbSFJS/dqKlBiFBTXZSaFOly+kFwsllrTkSErlqPApw6HVuQ/CLRPtSarOVHiDBYFgQtILAC7BwT4QgyqUAtaQGBdBsAX45an3JVeIT+JJOh4yG0VwzQ16KY2gOInu2UgKZmfWWXQprtkJD/d8IMZ3ESkOHExvuTgykudAqkSYJeZAYOohgWJdcsAoVXdDphfAqSZalGoQqv/bmedAsD+I712mdllg5uLM1fhUg5kaObqH9IJJOVbtwLSXb4UTCdNcq/l4RJJb+8lzBc1KDqUhluNMyCkuDrBVS0E5QqqSEZ2s7rw63FbcJrEZCFhx8QLWYCbJDiuudPm0KykATA6mlzE5R91Ci6C4/6a3FdoGotsL2nMQEioQokhJD5UqOWYk7ZF8QbRoakdrFACTLSVBRTwlQaYlyzV/vEOza9IqmPeUCVl3AoRMl0mpfXMlzRrJ2jcrEhYBcgnKhSjSn+FNbdJGU7uIkupXakgAllJFFBTAkJVRKhrwqGXk1YDL7Yk51S2XQKYAVI/xECtSO+B92l4qpqgGJTVzwijFmnSW+F+8nTi6QtjwSpBSoZgUuokize7m+IUEl9npEnSHteWSFAl3FLZiU8KuYUBlpqA/ehab2ymhQlQZPCVfYBqkgM5lqc/svyiuSoZlpUkAAHhqNveIBJ6qA+6No1hAAASWWS+a4CmZKy1MqqpUK1KTqIQdmdqTVpA+JygoFBmZ1yzumYkOk7xWzCyjMCnSUhROVJzJrxZSkgKTQHchVqQbEyRldCWATobJQeJIqXMpeUg3yk7QDCKVmYkUUW+znWKoP3Vij9NAYkYEkrHCSQ1wEB9mykcjRrRpWGJqpKyWrmJpq3ELHbkOsQlzEhbOShQzSwpS2SlLgobdJu5ZiKRJcyWDTKCS/wio0fOPxMKbCkkEBKRQEUZ30oovqwbwiMyeUVCUA6BRQjlcoQpT1o+giK5aquSsGjXIfqCBSj0vAHyrZLBw4BJFWapSsZqDQesSPrmEpzZlvXNkzEV0rmBDaWvAPe2BUegCQXroFJNiHpo8AQouCSUnkl3A++U0D87RiyjJlWskBX2t7AgFQ1e0BEmECqgoh34sw/wAy0dahVIEmekPlyAftPTwWpufD1ECme7DskOl9CdHP2VVpSpqImmYpNBKmEHVgwtrlU9Tb84iVm4pIYBaQKmqEFwa/GlPpv4ncGRNXplTyVNyfJSXo1xSkZAVUZzF/Ms+jhiwrpBBNLUBYXr5amn5QqVsWYV5Qc93NqDRwOsc9keXMJLEkN0a3RL+cECjsfHN6OFNFbhVFSmzEB7AtFpN7OlpJoVEB+IvtCkRMa5S/IpFaVooN5RsYhJqVj1P+kt5wLDzLgJSli1EjV93h5JKag6aADbVIBhDJa37omEAaAgeeYfKCKQscXuhTVRQD5kRmDJmEhRJYE1L2b7TxPEDIAw/Db7LQwFlqSmxBO4L01dowTk6mhAYsxcXGh9donOlZiEuQCXoeT6wlOkhn1py0G0IGTNFhUDUKo55srrBUzluyU+CAoeNMpruH8YiQxUQTaxqKO19mjeDRnuVAVOUKIT5PuYQ3MVMTMTM4uE1zFVqg942/Aw3kHvPduo0MsaAJVWWqtRUpgHaOBQhKiEuRvzI1DbwstDiUdTLV/k7vkwiVFRMYJrYtlLPmGlnY8W0MYZkkJLhlKR0RMScqjo2YC9nEJ4yZlmqZqqB/iAevjDcqWCSk2KGO5ykMesIClSOBaMpzKGYa8csl09SM3nEBiXl3Dy66MUqunwV8zGvfqUtZdiFCopdJMRnoZyCXt4EJPzJiR6XMFkEuoJFCGzy292p92YFue8RmzswKUuyXLXdK6rTrVKrWvCUpWVCVBnKATQX4fzgglspwSH25uT6gQFZYfOpjnSKhKR/+xAORRLapp84RkpAlzWChqOaHZbDkWpakTwIGQOO/KKjoypZOVQIsaCNInET1JYEcJLi/vE8T8jmVTnEh5dkNQOAsAPxiqFtuRrZ0ncROZMSCD3kFNmf9UokTEA7oVUbB4QwqWVNRdPEP4UqKfIj1MHwMw5Fn7BStPVdFA7gi4iTeIeho6SEu5clNZczmFDd6p5xBMwOmaxKFOKVAQosuXlNykvTptDkySHy1bOqS26AM4c3cKNNmEAwaKKk/CEFYs4U7O43BaIjIBS6HZVGWC9f8Oc5Z0kEoUTyeFp0l0lNRnJAF2KaFHIpLNyI5xLCTSoJBNBN911RMYkPehDjYwzPs7l1AqJ1zS1ZQrqU0O8QKZhMQyyygRuAJlQmY98qu6p6uQYnhcSpYKSlKVgsoBFiKEEZiejiFsGGKVXzEIINilYJIpzDvvWC43vyHLmYtSFE1cIDJJFioBg5GkRSmuO9scxqi4pZP0TAUzg5CpgUk2JSKMGHOhc2q5hvE9ny5asoD0dyz67BtBA1yg7toDr9HxhDQCEgEixJeqq61AT5PGJAVVKVFnYhIpvosjSmvhCMrGL4wCwGZmoeGorB8VPUAolRUxlkJJLD3gZSWGlTTRzvETRUtTBAaupyVvuk2JhWbTve6tcuT55Va1aml7QLEJpculSgDT/DUkJVa7G/IQFSswCSzKSF2bKVO4S1gTVt7QETEZQXKlMSRZdCO8KzBVztG4X7Nw4nhQWSDLUUAi5AoHd3YCMgL/9k=">
+  <div class="card-body">
+    <h4>Carpet Shampooing</h4>
+    <p>Deep extraction cleaning removing stains and allergens.</p>
+    <button class="book-btn" data-title="Carpet Shampooing" data-desc="Deep extraction cleaning removing stains and allergens.">Book Now</button>
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="card" data-category="maintenance">
+  <span class="cat-badge">Maintenance</span>
+  <img src="https://www.icominc.com/wp-content/uploads/2021/08/TA9Q9bV3Z81nZRooviZz51Y4bpnXIdBt1623180634.jpg">
+  <div class="card-body">
+    <h4>Plumbing Repairs</h4>
+    <p>Leak detection and pipe repairs keeping systems reliable.</p>
+    <button class="book-btn" data-title="Plumbing Repairs" data-desc="Leak detection and pipe repairs keeping systems reliable.">Book Now</button>
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="card" data-category="facility">
+  <span class="cat-badge">Facility</span>
+  <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80">
+  <div class="card-body">
+    <h4>Landscaping</h4>
+    <p>Garden and greenery maintenance creating welcoming surroundings.</p>
+    <button class="book-btn" data-title="Landscaping" data-desc="Garden and greenery maintenance creating welcoming surroundings.">Book Now</button>
+  </div>
+</div>
+
+<!-- 8 -->
+<div class="card" data-category="cleaning">
+  <span class="cat-badge">Cleaning</span>
+  <img src="https://media.istockphoto.com/id/629481486/photo/man-polishing-marble-floor-in-modern-office-building.jpg?s=612x612&w=0&k=20&c=c4BoM221GSpj-gDxGv8_zK4GSFpzz9YGZkQIPrLNqK8=">
+  <div class="card-body">
+    <h4>Floor Polishing</h4>
+    <p>Machine polishing restoring shine to marble and tile floors.</p>
+    <button class="book-btn" data-title="Floor Polishing" data-desc="Machine polishing restoring shine to marble and tile floors.">Book Now</button>
+  </div>
+</div>
+
+<!-- 9 -->
+<div class="card" data-category="compliance">
+  <span class="cat-badge">Compliance</span>
+  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80">
+  <div class="card-body">
+    <h4>Labour Law Support</h4>
+    <p>EPF, ESI and statutory compliance handled professionally.</p>
+    <button class="book-btn" data-title="Labour Law Support" data-desc="EPF, ESI and statutory compliance handled professionally.">Book Now</button>
+  </div>
+</div>
+
+<!-- 10 -->
+<div class="card" data-category="cleaning">
+  <span class="cat-badge">Cleaning</span>
+  <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=800&q=80">
+  <div class="card-body">
+    <h4>Glass Cleaning</h4>
+    <p>Professional facade and window cleaning for clear visibility.</p>
+    <button class="book-btn" data-title="Glass Cleaning" data-desc="Professional facade and window cleaning for clear visibility.">Book Now</button>
+  </div>
+</div>
+
+<!-- 11 -->
+<div class="card" data-category="maintenance">
+  <span class="cat-badge">Maintenance</span>
+  <img src="https://5.imimg.com/data5/NQ/RD/QO/SELLER-7260165/process-instrument-repairing-service.jpg">
+  <div class="card-body">
+    <h4>Electrical Repairs</h4>
+    <p>Lighting and wiring inspections by certified technicians.</p>
+    <button class="book-btn" data-title="Electrical Repairs" data-desc="Lighting and wiring inspections by certified technicians.">Book Now</button>
+  </div>
+</div>
+
+<!-- 12 -->
+<div class="card" data-category="facility">
+  <span class="cat-badge">Facility</span>
+  <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80">
+  <div class="card-body">
+    <h4>Facility Management</h4>
+    <p>Complete building operations handled under one trusted partner.</p>
+    <button class="book-btn" data-title="Facility Management" data-desc="Complete building operations handled under one trusted partner.">Book Now</button>
+  </div>
+</div>
+
+</div>
+
+
+
+
+</section>
+
+
+
+<section class="trust">
+
+  <h2 class="trust-title">Why Businesses Trust Complisure</h2>
+
+  <div class="trust-grid">
+
+    <div class="trust-card">👷 Verified & Trained Workforce</div>
+
+    <div class="trust-card">📋 Regulatory & Legal Compliance Focus</div>
+
+    <div class="trust-card">⚙️ On-Site Execution Teams</div>
+
+    <div class="trust-card">⚡ Fast Response & Reliable Support</div>
+
+    <div class="trust-card">🔍 Transparent & Professional Processes</div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+<section>
+<div class="cta-strip">
+  <h2>Let us handle operations while you grow your business</h2>
+  <button><a href="contact.html">CONTACT</a></button>
+</div>
+</section>
+
+
+
+<footer>
+© 2026 Complisure Services
+</footer>
+
+<script>
+
+const buttons = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".card");
+
+buttons.forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+
+    // active style
+    buttons.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+
+    cards.forEach(card=>{
+      const category = card.dataset.category;
+
+      if(filter === "all" || category === filter){
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+  });
+});
+
+</script>
+
+<script>
+
+const topBtn = document.getElementById("topBtn");
+
+/* show button after scroll */
+window.addEventListener("scroll", () => {
+  if(window.scrollY > 400){
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
+});
+
+/* smooth scroll to top */
+topBtn.onclick = () => {
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+};
+
+</script>
+
+<script>
+
+const confirmBtn = document.querySelector(".confirm-btn");
+const bookingModal = document.getElementById("bookingModal");
+const successModal = document.getElementById("successModal");
+const closeSuccess = document.getElementById("closeSuccess");
+
+confirmBtn.addEventListener("click", () => {
+
+  bookingModal.style.display = "none";   // close booking
+  successModal.style.display = "flex";   // show success
+
+});
+
+closeSuccess.onclick = () => {
+  successModal.style.display = "none";
+};
+
+</script>
+
+
+</body>
+</html>
